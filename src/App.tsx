@@ -1,5 +1,12 @@
+import Router from './routes/Router';
+import './styles/global.scss';
+
 function App() {
-  return <>ok</>;
+  return (
+    <>
+      <Router />
+    </>
+  );
 }
 
 export default App;

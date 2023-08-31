@@ -1,0 +1,15 @@
+.main-container {
+  background-image: url('../../assets/home/background-home-mobile.jpg');
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
