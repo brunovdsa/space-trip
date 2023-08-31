@@ -1,6 +1,6 @@
 import Logo from '../../assets/shared/logo.svg';
-import MenuIcon from '../../assets/shared/icon-hamburger.svg';
 import './styles.scss';
+import Navbar from '../NavBar';
 
 export function Header() {
   return (
@@ -9,9 +9,7 @@ export function Header() {
         <img src={Logo} className='logo' />
       </div>
       <div className='col-2'>
-        <button className='menu-btn'>
-          <img src={MenuIcon} className='menu-icon' />
-        </button>
+        <Navbar />
       </div>
     </header>
   );
