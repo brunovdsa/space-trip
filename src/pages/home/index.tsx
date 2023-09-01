@@ -8,9 +8,11 @@ export function Home() {
     <MainContainer>
       <main className='home-container'>
         <div className='col-1'>
-          <span className='intro'>{i18n.t('homePage.intro')}</span>
-          <h1 className='title'>{i18n.t('homePage.title')}</h1>
-          <p className='description'>{i18n.t('homePage.description')}</p>
+          <div className='box'>
+            <span className='intro'>{i18n.t('homePage.intro')}</span>
+            <h1 className='title'>{i18n.t('homePage.title')}</h1>
+            <p className='description'>{i18n.t('homePage.description')}</p>
+          </div>
         </div>
         <div className='col-2'>
           <Link to={'/destination'} className='explore-link'>

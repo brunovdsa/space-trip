@@ -2,8 +2,8 @@ const messages = {
   pt: {
     translations: {
       setLanguage: {
-        titlePT: 'Português',
-        titleEN: 'Inglês',
+        titlePT: 'PORTUGUÊS',
+        titleEN: 'INGLÊS',
       },
       header: {
         headerHomeLink: 'INÍCIO',
@@ -16,7 +16,7 @@ const messages = {
         title: 'ESPAÇO',
         description:
           'Vamos encarar os fatos; se você quiser ir para o espaço, é melhor ir genuinamente para o espaço sideral e não ficar pairando na borda dele. Bem, sente-se e relaxe porque lhe proporcionaremos uma esperiência verdadeiramente fora deste mundo!',
-        linkTo: 'Explore',
+        linkTo: 'EXPLORE',
       },
     },
   },
