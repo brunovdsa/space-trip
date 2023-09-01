@@ -27,6 +27,7 @@ export default function Navbar(props: NavbarProps) {
         </button>
         {isActive && <div className='bg-overlay' onClick={onClick} />}
         <nav
+          className='nav-mobile'
           ref={dropDownRef}
           style={
             isActive
@@ -39,7 +40,7 @@ export default function Navbar(props: NavbarProps) {
               <img src={closeIcon} />
             </button>
           </div>
-          <div className='nav-body'>
+          <div className='nav-mobile-body'>
             <Link to={'/'} onClick={onClick}>
               <span>00</span> {i18n.t('header.headerHomeLink')}
             </Link>
@@ -54,7 +55,7 @@ export default function Navbar(props: NavbarProps) {
             </Link>
           </div>
 
-          <div className='nav-footer'>
+          <div className='nav-mobile-footer'>
             <select
               onChange={props.handleSelect}
               value={props.language}
@@ -66,7 +67,43 @@ export default function Navbar(props: NavbarProps) {
           </div>
         </nav>
       </div>
-      <div className='desktop-navbar'></div>
+      <div className='desktop-navbar'>
+        <nav className='nav-desktop'>
+          <div className='nav-desktop-body'>
+            <div className='border-hover'>
+              <Link to={'/'} onClick={onClick}>
+                <span>00</span> {i18n.t('header.headerHomeLink')}
+              </Link>
+            </div>
+            <div className='border-hover'>
+              <Link to={'/destination'} onClick={onClick}>
+                <span>01</span> {i18n.t('header.headerDestinationLink')}
+              </Link>
+            </div>
+            <div className='border-hover'>
+              <Link to={'/crew'} onClick={onClick}>
+                <span>02</span> {i18n.t('header.headerCrewLink')}
+              </Link>
+            </div>
+            <div className='border-hover'>
+              <Link to={'/crew'} onClick={onClick}>
+                <span>03</span> {i18n.t('header.headerTechLink')}
+              </Link>
+            </div>
+          </div>
+
+          <div className='nav-desktop-footer'>
+            <select
+              onChange={props.handleSelect}
+              value={props.language}
+              className='select-language'
+            >
+              <option value={'pt-BR'}>{i18n.t('setLanguage.titlePT')}</option>
+              <option value={'en-US'}>{i18n.t('setLanguage.titleEN')}</option>
+            </select>
+          </div>
+        </nav>
+      </div>
     </div>
   );
 }
