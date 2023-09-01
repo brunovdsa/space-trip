@@ -5,8 +5,14 @@ import navIcon from '../../assets/shared/icon-hamburger.svg';
 import closeIcon from '../../assets/shared/icon-close.svg';
 
 import './styles.scss';
+import { i18n } from '../../translate/i18n';
 
-export default function Navbar() {
+interface NavbarProps {
+  handleSelect(e: any): void;
+  language: any;
+}
+
+export default function Navbar(props: NavbarProps) {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   const dropDownRef = useRef(null);
@@ -34,20 +40,28 @@ export default function Navbar() {
         </div>
         <div className='nav-body'>
           <Link to={'/'} onClick={onClick}>
-            HOME
+            <span>00</span> {i18n.t('header.headerHomeLink')}
           </Link>
           <Link to={'/destination'} onClick={onClick}>
-            DESTINATION
+            <span>01</span> {i18n.t('header.headerDestinationLink')}
           </Link>
           <Link to={'/crew'} onClick={onClick}>
-            CREW
+            <span>02</span> {i18n.t('header.headerCrewLink')}
+          </Link>
+          <Link to={'/crew'} onClick={onClick}>
+            <span>03</span> {i18n.t('header.headerTechLink')}
           </Link>
         </div>
 
-        <div>
-          <div>
-            <button>dou</button>
-          </div>
+        <div className='nav-footer'>
+          <select
+            onChange={props.handleSelect}
+            value={props.language}
+            className='select-language'
+          >
+            <option value={'pt-BR'}>{i18n.t('setLanguage.titlePT')}</option>
+            <option value={'en-US'}>{i18n.t('setLanguage.titleEN')}</option>
+          </select>
         </div>
       </nav>
     </div>
