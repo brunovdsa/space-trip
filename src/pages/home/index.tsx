@@ -3,9 +3,12 @@ import { MainContainer } from '../../components/MainContainer';
 import './styles.scss';
 import { i18n } from '../../translate/i18n';
 
+import bgDesktop from '../../assets/home/background-home-desktop.jpg';
+import bgMobile from '../../assets/home/background-home-tablet.jpg';
+
 export function Home() {
   return (
-    <MainContainer>
+    <MainContainer desktopImageUrl={bgDesktop} mobileImageUrl={bgMobile}>
       <main className='home-container'>
         <div className='col-1'>
           <div className='box'>
