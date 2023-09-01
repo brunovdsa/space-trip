@@ -1,24 +1,20 @@
 import { Link } from 'react-router-dom';
 import { MainContainer } from '../../components/MainContainer';
 import './styles.scss';
+import { i18n } from '../../translate/i18n';
 
 export function Home() {
   return (
     <MainContainer>
       <main className='home-container'>
         <div className='col-1'>
-          <span className='intro'>SO, YOU WANT TO TRAVEL TO</span>
-          <h1 className='title'>SPACE</h1>
-          <p className='description'>
-            Let’s face it; if you want to go to space, you might as well
-            genuinely go to outer space and not hover kind of on the edge of it.
-            Well sit back, and relax because we’ll give you a truly out of this
-            world experience!
-          </p>
+          <span className='intro'>{i18n.t('homePage.intro')}</span>
+          <h1 className='title'>{i18n.t('homePage.title')}</h1>
+          <p className='description'>{i18n.t('homePage.description')}</p>
         </div>
         <div className='col-2'>
           <Link to={'/destination'} className='explore-link'>
-            Explore
+            {i18n.t('homePage.linkTo')}
           </Link>
         </div>
       </main>

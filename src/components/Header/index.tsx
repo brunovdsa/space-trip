@@ -2,6 +2,7 @@ import Logo from '../../assets/shared/logo.svg';
 import './styles.scss';
 import Navbar from '../NavBar';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const I18N_STORAGE_KEY = 'i18nextLng';
 
@@ -18,7 +19,9 @@ export function Header() {
   return (
     <header className='header-container'>
       <div className='col-1'>
-        <img src={Logo} className='logo' />
+        <Link to={'/'}>
+          <img src={Logo} className='logo' />
+        </Link>
       </div>
       <div className='col-2'>
         <Navbar handleSelect={handleSelect} language={language} />
