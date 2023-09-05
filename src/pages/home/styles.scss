@@ -1,6 +1,5 @@
 .home-container,
-.col-1,
-.col-2 {
+.col-1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +35,9 @@
 
 .col-2 {
   height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro {
@@ -69,13 +71,6 @@
     line-height: 32px;
     letter-spacing: 0;
   }
-}
-
-.col-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50%;
 }
 
 .explore-link {
