@@ -1,32 +1,51 @@
-import moon from '../../assets/destination/image-moon.webp';
+import { useRef } from 'react';
 import './styles.scss';
 
-export function Carousel() {
+interface CarouselProps {
+  data: string[];
+}
+
+export function Carousel(props: CarouselProps) {
+  const carousel = useRef(null);
+
   return (
-    <div className='carousel'>
-      <div className='item'>
-        <img src={moon} alt='' />
-        <nav className='nav'>
-          <button>MOON</button>
-          <button>MARS</button>
-          <button>EUROPA</button>
-          <button>TITAN</button>
-        </nav>
-        <section className='content'>
-          <h1>MOON</h1>
-          <p>
-            See our planet as you’ve never seen it before. A perfect relaxing
-            trip away to help regain perspective and come back refreshed. While
-            you’re there, take in some history by visiting the Luna 2 and Apollo
-            11 landing sites.
-          </p>
-        </section>
-        <section className='travel-info'>
-          <span className='info-title'>AVG. DISTANCE</span>
-          <span className='info-value'>3216,32KM</span>
-          <span className='info-title'>EST. TRAVEL TIME</span>
-          <span className='info-value'>21 days</span>
-        </section>
+    <div className='container-carousel'>
+      <nav className='nav'>
+        <button>MOON</button>
+        <button>MARS</button>
+        <button>EUROPA</button>
+        <button>TITAN</button>
+      </nav>
+      <div className='carousel' ref={carousel}>
+        {props.data.map((item: any) => {
+          const {
+            id,
+            title,
+            image,
+            imgAlt,
+            contentDescription,
+            distance,
+            distanceValue,
+            travelTime,
+            travelTimeValue,
+          } = item;
+
+          return (
+            <div className='item' key={id}>
+              <img src={image} alt={imgAlt} />
+              <section className='content'>
+                <h1>{title}</h1>
+                <p>{contentDescription}</p>
+              </section>
+              <section className='travel-info'>
+                <span className='info-title'>{distance}</span>
+                <span className='info-value'>{distanceValue}</span>
+                <span className='info-title'>{travelTime}</span>
+                <span className='info-value'>{travelTimeValue}</span>
+              </section>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
