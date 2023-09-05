@@ -8,8 +8,6 @@ interface MainContainerProps {
 }
 
 export function MainContainer(props: MainContainerProps) {
-  console.log(props.desktopImageUrl);
-  console.log(props.mobileImageUrl);
   return (
     <>
       <style>

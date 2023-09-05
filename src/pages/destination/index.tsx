@@ -9,12 +9,12 @@ import { Carousel } from '../../components/Carousel';
 import { useEffect, useState } from 'react';
 
 export function Destination() {
-  const [data, setData] = useState([]);
+  const [slides, setSlides] = useState<Array<string>>([]);
 
   useEffect(() => {
     fetch('http://10.0.0.199:5173/static/data.json')
       .then((response) => response.json())
-      .then(setData);
+      .then(setSlides);
   }, []);
 
   return (
@@ -25,7 +25,7 @@ export function Destination() {
           <h1 className='dest-title'>PICK YOUR DESTINATION</h1>
         </div>
         <div className='col-2'>
-          <Carousel data={data} />
+          <Carousel slides={slides} />
         </div>
       </main>
     </MainContainer>

@@ -1,47 +1,53 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import './styles.scss';
 
 interface CarouselProps {
-  data: string[];
+  slides: Array<any>;
 }
 
 export function Carousel(props: CarouselProps) {
-  const carousel = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const moveDot = (slideIndex: any) => {
+    setCurrentIndex(slideIndex);
+  };
 
   return (
     <div className='container-carousel'>
       <nav className='nav'>
-        <button>MOON</button>
-        <button>MARS</button>
-        <button>EUROPA</button>
-        <button>TITAN</button>
+        {props.slides.map((item: any, slideIndex: any) => (
+          <button key={slideIndex} onClick={() => moveDot(slideIndex)}>
+            {item.title}
+          </button>
+        ))}
       </nav>
-      <div className='carousel' ref={carousel}>
-        {props.data.map((item: any) => {
-          const {
-            id,
-            title,
-            image,
-            imgAlt,
-            contentDescription,
-            distance,
-            distanceValue,
-            travelTime,
-            travelTimeValue,
-          } = item;
-
+      <div className='carousel'>
+        {props.slides.map((item: any) => {
+          const { id } = item;
           return (
             <div className='item' key={id}>
-              <img src={image} alt={imgAlt} />
+              <img
+                src={props.slides[currentIndex].image}
+                alt={props.slides[currentIndex].imgAlt}
+              />
               <section className='content'>
-                <h1>{title}</h1>
-                <p>{contentDescription}</p>
+                <h1>{props.slides[currentIndex].title}</h1>
+                <p>{props.slides[currentIndex].contentDescription}</p>
               </section>
+              <div className='border-bottom'></div>
               <section className='travel-info'>
-                <span className='info-title'>{distance}</span>
-                <span className='info-value'>{distanceValue}</span>
-                <span className='info-title'>{travelTime}</span>
-                <span className='info-value'>{travelTimeValue}</span>
+                <span className='info-title'>
+                  {props.slides[currentIndex].distance}
+                </span>
+                <span className='info-value'>
+                  {props.slides[currentIndex].distanceValue}
+                </span>
+                <span className='info-title'>
+                  {props.slides[currentIndex].travelTime}
+                </span>
+                <span className='info-value'>
+                  {props.slides[currentIndex].travelTimeValue}
+                </span>
               </section>
             </div>
           );
