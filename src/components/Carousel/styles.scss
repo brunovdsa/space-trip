@@ -1,0 +1,96 @@
+.carousel,
+.item,
+.content,
+.carousel .item .travel-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.carousel {
+  max-width: 80vw;
+}
+
+.carousel .item img {
+  height: 11rem;
+  padding: 1rem 0 2rem;
+}
+
+.carousel .item .nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.carousel .item .nav button {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--white);
+  font-family: var(--secondary-font);
+  font-size: var(--body);
+  font-weight: 300;
+  letter-spacing: 1.7px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0.3rem;
+
+  transition: 0.3s;
+  &:hover {
+    border-bottom: 2px solid var(--white);
+  }
+}
+
+.carousel .item .content {
+  position: relative;
+}
+
+.carousel .item .content::after {
+  content: '';
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  background-color: var(--white);
+  border-top: 1px solid var(--white);
+  z-index: 1;
+  margin: 18em 0 0 0;
+  opacity: 15%;
+}
+
+.carousel .item .content h1 {
+  font-size: var(--h3);
+  font-family: var(--primary-font);
+  color: var(--white);
+  padding: 0;
+  margin: 1.7rem 0 0;
+}
+
+.carousel .item .content p {
+  font-size: var(--secondary-subtext);
+  font-family: var(--terciary-font);
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 25px;
+  color: var(--white);
+  text-align: center;
+  margin: 0.4rem;
+}
+
+.carousel .item .travel-info {
+  margin: 4rem 0;
+  gap: 1rem;
+}
+
+.carousel .item .travel-info .info-title {
+  color: var(--light-violet);
+  font-family: var(--secondary-font);
+}
+
+.carousel .item .travel-info .info-value {
+  color: var(--white);
+  font-family: var(--primary-font);
+  font-size: var(--primary-subheading);
+}
