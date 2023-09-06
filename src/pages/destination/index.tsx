@@ -3,7 +3,7 @@ import { MainContainer } from '../../components/MainContainer';
 import './styles.scss';
 
 import bgDesktop from '../../assets/destination/background-destination-desktop.jpg';
-import bgMobile from '../../assets/destination/background-destination-tablet.jpg';
+import bgMobile from '../../assets/destination/background-destination-desktop.jpg';
 
 import { Carousel } from '../../components/Carousel';
 import { useEffect, useState } from 'react';
