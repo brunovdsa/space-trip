@@ -21,6 +21,7 @@ export function Home() {
           <Link to={'/destination'} className='explore-link'>
             {i18n.t('homePage.linkTo')}
           </Link>
+          <Link to={'/destination'} className='explore-link'></Link>
         </div>
       </main>
     </MainContainer>

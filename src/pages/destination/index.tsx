@@ -12,7 +12,7 @@ export function Destination() {
   const [slides, setSlides] = useState<Array<string>>([]);
 
   useEffect(() => {
-    fetch('http://10.0.0.199:5173/static/data.json')
+    fetch('https://startourism.vercel.app/static/data.json')
       .then((response) => response.json())
       .then(setSlides);
   }, []);
