@@ -5,14 +5,8 @@ import navIcon from '../../assets/shared/icon-hamburger.svg';
 import closeIcon from '../../assets/shared/icon-close.svg';
 
 import './styles.scss';
-import { i18n } from '../../translate/i18n';
 
-interface NavbarProps {
-  handleSelect(e: any): void;
-  language: any;
-}
-
-export default function Navbar(props: NavbarProps) {
+export default function Navbar() {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   const dropDownRef = useRef(null);
@@ -42,28 +36,17 @@ export default function Navbar(props: NavbarProps) {
           </div>
           <div className='nav-mobile-body'>
             <Link to={'/'} onClick={onClick}>
-              <span>00</span> {i18n.t('header.headerHomeLink')}
+              <span>00</span> HOME
             </Link>
             <Link to={'/destination'} onClick={onClick}>
-              <span>01</span> {i18n.t('header.headerDestinationLink')}
+              <span>01</span> DESTINATION
             </Link>
             <Link to={'/crew'} onClick={onClick}>
-              <span>02</span> {i18n.t('header.headerCrewLink')}
+              <span>02</span> CREW
             </Link>
             <Link to={'/crew'} onClick={onClick}>
-              <span>03</span> {i18n.t('header.headerTechLink')}
+              <span>03</span> TECHNOLOGY
             </Link>
-          </div>
-
-          <div className='nav-mobile-footer'>
-            <select
-              onChange={props.handleSelect}
-              value={props.language}
-              className='select-language'
-            >
-              <option value={'pt-BR'}>{i18n.t('setLanguage.titlePT')}</option>
-              <option value={'en-US'}>{i18n.t('setLanguage.titleEN')}</option>
-            </select>
           </div>
         </nav>
       </div>
@@ -72,35 +55,24 @@ export default function Navbar(props: NavbarProps) {
           <div className='nav-desktop-body'>
             <div className='border-hover'>
               <Link to={'/'} onClick={onClick}>
-                <span>00</span> {i18n.t('header.headerHomeLink')}
+                <span>00</span> HOME
               </Link>
             </div>
             <div className='border-hover'>
               <Link to={'/destination'} onClick={onClick}>
-                <span>01</span> {i18n.t('header.headerDestinationLink')}
+                <span>01</span> DESTINATION
               </Link>
             </div>
             <div className='border-hover'>
               <Link to={'/crew'} onClick={onClick}>
-                <span>02</span> {i18n.t('header.headerCrewLink')}
+                <span>02</span> CREW
               </Link>
             </div>
             <div className='border-hover'>
               <Link to={'/crew'} onClick={onClick}>
-                <span>03</span> {i18n.t('header.headerTechLink')}
+                <span>03</span> TECHNOLOGY
               </Link>
             </div>
-          </div>
-
-          <div className='nav-desktop-footer'>
-            <select
-              onChange={props.handleSelect}
-              value={props.language}
-              className='select-language'
-            >
-              <option value={'pt-BR'}>{i18n.t('setLanguage.titlePT')}</option>
-              <option value={'en-US'}>{i18n.t('setLanguage.titleEN')}</option>
-            </select>
           </div>
         </nav>
       </div>
