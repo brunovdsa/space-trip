@@ -6,17 +6,10 @@ import bgDesktop from '../../assets/destination/background-destination-desktop.j
 import bgMobile from '../../assets/destination/background-destination-desktop.jpg';
 
 import { Carousel } from '../../components/Carousel';
-import { useEffect, useState } from 'react';
+
+import { destinationData } from '../../../static/data';
 
 export function Destination() {
-  const [slides, setSlides] = useState<Array<string>>([]);
-
-  useEffect(() => {
-    fetch('https://startourism.vercel.app/static/data.json')
-      .then((response) => response.json())
-      .then(setSlides);
-  }, []);
-
   return (
     <MainContainer desktopImageUrl={bgDesktop} mobileImageUrl={bgMobile}>
       <main className='container-destination'>
@@ -25,7 +18,7 @@ export function Destination() {
           <h1 className='dest-title'>PICK YOUR DESTINATION</h1>
         </div>
         <div className='col-2'>
-          <Carousel slides={slides} />
+          <Carousel slides={destinationData} />
         </div>
       </main>
     </MainContainer>
